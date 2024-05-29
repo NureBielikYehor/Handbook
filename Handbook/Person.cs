@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Handbook
@@ -17,7 +18,8 @@ namespace Handbook
         public string District { get; set; }
         public string Settlement { get; set; }
         public string Postcode { get; set; }
-        public string FullName => Name + " " + Surname;
+        [JsonIgnore]
+        public string FullName => Surname + " " + Name;
 
         public Person(int id, string name, string surname, string country, string region, string district, string settlement, string postcode) 
         { 

@@ -1,6 +1,6 @@
 ﻿namespace Handbook
 {
-    partial class PersonAddForm
+    partial class PersonAddEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             label7 = new Label();
             nameTextBox = new TextBox();
             surnameTextBox = new TextBox();
-            addButton = new Button();
+            okButton = new Button();
             label5 = new Label();
             postcodeTextBox = new TextBox();
             label2 = new Label();
@@ -54,7 +54,7 @@
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(nameTextBox);
             groupBox1.Controls.Add(surnameTextBox);
-            groupBox1.Controls.Add(addButton);
+            groupBox1.Controls.Add(okButton);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(postcodeTextBox);
             groupBox1.Controls.Add(label2);
@@ -97,7 +97,7 @@
             nameTextBox.MaxLength = 50;
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(250, 23);
-            nameTextBox.TabIndex = 14;
+            nameTextBox.TabIndex = 0;
             nameTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // surnameTextBox
@@ -106,19 +106,19 @@
             surnameTextBox.MaxLength = 50;
             surnameTextBox.Name = "surnameTextBox";
             surnameTextBox.Size = new Size(250, 23);
-            surnameTextBox.TabIndex = 12;
+            surnameTextBox.TabIndex = 1;
             surnameTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
-            // addButton
+            // okButton
             // 
-            addButton.ImeMode = ImeMode.NoControl;
-            addButton.Location = new Point(299, 321);
-            addButton.Name = "addButton";
-            addButton.Size = new Size(75, 23);
-            addButton.TabIndex = 1;
-            addButton.Text = "Додати";
-            addButton.UseVisualStyleBackColor = true;
-            addButton.Click += addButton_Click;
+            okButton.ImeMode = ImeMode.NoControl;
+            okButton.Location = new Point(299, 321);
+            okButton.Name = "okButton";
+            okButton.Size = new Size(75, 23);
+            okButton.TabIndex = 8;
+            okButton.Text = "Додати";
+            okButton.UseVisualStyleBackColor = true;
+            okButton.Click += okButton_Click;
             // 
             // label5
             // 
@@ -136,7 +136,7 @@
             postcodeTextBox.MaxLength = 5;
             postcodeTextBox.Name = "postcodeTextBox";
             postcodeTextBox.Size = new Size(250, 23);
-            postcodeTextBox.TabIndex = 8;
+            postcodeTextBox.TabIndex = 7;
             postcodeTextBox.KeyPress += OnlyDigit_KeyPress;
             // 
             // label2
@@ -185,7 +185,7 @@
             districtTextBox.MaxLength = 50;
             districtTextBox.Name = "districtTextBox";
             districtTextBox.Size = new Size(250, 23);
-            districtTextBox.TabIndex = 6;
+            districtTextBox.TabIndex = 5;
             districtTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // countryTextBox
@@ -194,7 +194,7 @@
             countryTextBox.MaxLength = 50;
             countryTextBox.Name = "countryTextBox";
             countryTextBox.Size = new Size(250, 23);
-            countryTextBox.TabIndex = 0;
+            countryTextBox.TabIndex = 3;
             countryTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // settlementTextBox
@@ -203,7 +203,7 @@
             settlementTextBox.MaxLength = 50;
             settlementTextBox.Name = "settlementTextBox";
             settlementTextBox.Size = new Size(250, 23);
-            settlementTextBox.TabIndex = 2;
+            settlementTextBox.TabIndex = 6;
             settlementTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // regionTextBox
@@ -215,14 +215,15 @@
             regionTextBox.TabIndex = 4;
             regionTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
-            // PersonAddForm
+            // PersonAddEditForm
             // 
+            AcceptButton = okButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(455, 461);
             Controls.Add(groupBox1);
             MinimumSize = new Size(471, 500);
-            Name = "PersonAddForm";
+            Name = "PersonAddEditForm";
             Text = "PersonAddForm";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -236,7 +237,7 @@
         private Label label7;
         private TextBox nameTextBox;
         private TextBox surnameTextBox;
-        private Button addButton;
+        private Button okButton;
         private Label label5;
         private TextBox postcodeTextBox;
         private Label label2;

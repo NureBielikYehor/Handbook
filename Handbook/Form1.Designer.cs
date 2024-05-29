@@ -53,10 +53,13 @@
             addButton = new Button();
             deleteButton = new Button();
             editButton = new Button();
-            detailsButton = new Button();
+            menuStrip1 = new MenuStrip();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)idNumericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)personBindingSource).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -113,7 +116,9 @@
             // 
             resources.ApplyResources(idNumericUpDown, "idNumericUpDown");
             idNumericUpDown.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            idNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             idNumericUpDown.Name = "idNumericUpDown";
+            idNumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // searchButton
             // 
@@ -186,10 +191,6 @@
             searchResultsListBox.Name = "searchResultsListBox";
             searchResultsListBox.ValueMember = "Id";
             // 
-            // personBindingSource
-            // 
-            personBindingSource.DataSource = typeof(Person);
-            // 
             // addButton
             // 
             resources.ApplyResources(addButton, "addButton");
@@ -202,36 +203,55 @@
             resources.ApplyResources(deleteButton, "deleteButton");
             deleteButton.Name = "deleteButton";
             deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
             // 
             // editButton
             // 
             resources.ApplyResources(editButton, "editButton");
             editButton.Name = "editButton";
             editButton.UseVisualStyleBackColor = true;
+            editButton.Click += editButton_Click;
             // 
-            // detailsButton
+            // menuStrip1
             // 
-            resources.ApplyResources(detailsButton, "detailsButton");
-            detailsButton.Name = "detailsButton";
-            detailsButton.UseVisualStyleBackColor = true;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { helpToolStripMenuItem });
+            resources.ApplyResources(menuStrip1, "menuStrip1");
+            menuStrip1.Name = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem });
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(helpToolStripMenuItem, "helpToolStripMenuItem");
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            resources.ApplyResources(aboutToolStripMenuItem, "aboutToolStripMenuItem");
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // Form1
             // 
+            AcceptButton = searchButton;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(detailsButton);
             Controls.Add(editButton);
             Controls.Add(deleteButton);
             Controls.Add(addButton);
             Controls.Add(searchResultsListBox);
             Controls.Add(groupBox1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)idNumericUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)personBindingSource).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -254,11 +274,13 @@
         private Button addButton;
         private Button deleteButton;
         private Button editButton;
-        private Button detailsButton;
         private Label label7;
         private TextBox surnameTextBox;
         private Label label8;
         private TextBox nameTextBox;
         private BindingSource personBindingSource;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
     }
 }

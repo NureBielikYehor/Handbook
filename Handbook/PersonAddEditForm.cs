@@ -10,16 +10,31 @@ using System.Windows.Forms;
 
 namespace Handbook
 {
-    public partial class PersonAddForm : Form
+    public partial class PersonAddEditForm : Form
     {
         private Handbook Handbook;
-        public PersonAddForm(Handbook handbook)
+        private int? EditId;
+        public PersonAddEditForm(Handbook handbook, int? editId)
         {
             InitializeComponent();
             Handbook = handbook;
+            EditId = editId;
+            Text = (editId != null ? "Редагування" : "Додавання") + " інформації про людину";
+            okButton.Text = editId != null ? "Зберегти" : "Додати";
+            if (EditId != null)
+            {
+                Person person = Handbook.People.Find(person => person.Id == EditId)!;
+                nameTextBox.Text = person.Name;
+                surnameTextBox.Text = person.Surname;
+                countryTextBox.Text = person.Country;
+                regionTextBox.Text = person.Region;
+                districtTextBox.Text = person.District;
+                settlementTextBox.Text = person.Settlement;
+                postcodeTextBox.Text = person.Postcode;
+            }
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void okButton_Click(object sender, EventArgs e)
         {
             if (nameTextBox.Text.Length == 0)
             {
@@ -56,9 +71,23 @@ namespace Handbook
                 ShowErrorMessage("Ви не заповнили поштовий індекс");
                 return;
             }
-            int maxId = Handbook.People.Count == 0 ? 0 : Handbook.People.Max(person => person.Id);
-            Person person = new Person(maxId + 1, nameTextBox.Text, surnameTextBox.Text, countryTextBox.Text, regionTextBox.Text, districtTextBox.Text, settlementTextBox.Text, postcodeTextBox.Text);
-            Handbook.People.Add(person);
+            if (EditId != null)
+            {
+                Person person = Handbook.People.Find(person => person.Id == EditId)!;
+                person.Name = nameTextBox.Text;
+                person.Surname = surnameTextBox.Text;
+                person.Country = countryTextBox.Text;
+                person.Region = regionTextBox.Text;
+                person.District = districtTextBox.Text;
+                person.Settlement = settlementTextBox.Text;
+                person.Postcode = postcodeTextBox.Text;
+            }
+            else
+            {
+                int maxId = Handbook.People.Count == 0 ? 0 : Handbook.People.Max(person => person.Id);
+                Person person = new Person(maxId + 1, nameTextBox.Text, surnameTextBox.Text, countryTextBox.Text, regionTextBox.Text, districtTextBox.Text, settlementTextBox.Text, postcodeTextBox.Text);
+                Handbook.People.Add(person);
+            }
             Handbook.SaveData();
             Close();
         }
