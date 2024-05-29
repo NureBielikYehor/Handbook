@@ -1,11 +1,12 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Handbook.Models;
 
 namespace Handbook
 {
     public partial class Form1 : Form
     {
-        private Handbook handbook;
+        private PostalHandbook handbook;
         public Form1()
         {
             InitializeComponent();
@@ -14,7 +15,7 @@ namespace Handbook
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            handbook = Handbook.LoadData();
+            handbook = PostalHandbook.LoadData();
             idNumericUpDown.Text = "";
             searchButton_Click(null, null);
         }

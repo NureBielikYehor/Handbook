@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Handbook.Models;
 
 namespace Handbook
 {
     public partial class PersonAddEditForm : Form
     {
-        private Handbook Handbook;
+        private PostalHandbook Handbook;
         private int? EditId;
-        public PersonAddEditForm(Handbook handbook, int? editId)
+        public PersonAddEditForm(PostalHandbook handbook, int? editId)
         {
             InitializeComponent();
             Handbook = handbook;

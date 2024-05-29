@@ -6,14 +6,14 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace Handbook
+namespace Handbook.Models
 {
     public class Person
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Country {  get; set; }
+        public string Country { get; set; }
         public string Region { get; set; }
         public string District { get; set; }
         public string Settlement { get; set; }
@@ -21,8 +21,8 @@ namespace Handbook
         [JsonIgnore]
         public string FullName => Surname + " " + Name;
 
-        public Person(int id, string name, string surname, string country, string region, string district, string settlement, string postcode) 
-        { 
+        public Person(int id, string name, string surname, string country, string region, string district, string settlement, string postcode)
+        {
             Id = id;
             Name = name;
             Surname = surname;

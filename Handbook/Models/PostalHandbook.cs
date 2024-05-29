@@ -8,14 +8,14 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace Handbook
+namespace Handbook.Models
 {
-    public class Handbook
+    public class PostalHandbook
     {
         [JsonInclude]
         public List<Person> People;
         private const string PATH = "Handbook.txt";
-        public Handbook(List<Person> people)
+        public PostalHandbook(List<Person> people)
         {
             People = people;
         }
@@ -45,13 +45,13 @@ namespace Handbook
             File.WriteAllText(PATH, jsonString);
         }
 
-        public static Handbook LoadData()
+        public static PostalHandbook LoadData()
         {
             if (!File.Exists(PATH))
             {
-                return new Handbook([]);
+                return new PostalHandbook([]);
             }
-            return JsonSerializer.Deserialize<Handbook>(File.ReadAllText(PATH))!;
+            return JsonSerializer.Deserialize<PostalHandbook>(File.ReadAllText(PATH))!;
         }
     }
 }
