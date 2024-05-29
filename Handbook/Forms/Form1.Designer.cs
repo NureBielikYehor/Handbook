@@ -30,6 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             label8 = new Label();
             label7 = new Label();
@@ -48,8 +50,6 @@
             countryTextBox = new TextBox();
             settlementTextBox = new TextBox();
             regionTextBox = new TextBox();
-            searchResultsListBox = new ListBox();
-            personBindingSource = new BindingSource(components);
             addButton = new Button();
             deleteButton = new Button();
             editButton = new Button();
@@ -60,10 +60,21 @@
             редагуватиToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
+            resultsDataGridView = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
+            personBindingSource = new BindingSource(components);
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)idNumericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)personBindingSource).BeginInit();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)resultsDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)personBindingSource).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -186,15 +197,6 @@
             regionTextBox.Name = "regionTextBox";
             regionTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
-            // searchResultsListBox
-            // 
-            resources.ApplyResources(searchResultsListBox, "searchResultsListBox");
-            searchResultsListBox.DataSource = personBindingSource;
-            searchResultsListBox.DisplayMember = "FullName";
-            searchResultsListBox.FormattingEnabled = true;
-            searchResultsListBox.Name = "searchResultsListBox";
-            searchResultsListBox.ValueMember = "Id";
-            // 
             // addButton
             // 
             resources.ApplyResources(addButton, "addButton");
@@ -258,15 +260,109 @@
             resources.ApplyResources(aboutToolStripMenuItem, "aboutToolStripMenuItem");
             aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
+            // resultsDataGridView
+            // 
+            resultsDataGridView.AllowUserToAddRows = false;
+            resultsDataGridView.AllowUserToDeleteRows = false;
+            resources.ApplyResources(resultsDataGridView, "resultsDataGridView");
+            resultsDataGridView.AutoGenerateColumns = false;
+            resultsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            resultsDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            resultsDataGridView.BackgroundColor = SystemColors.ButtonFace;
+            resultsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resultsDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8 });
+            resultsDataGridView.DataSource = personBindingSource;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            resultsDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            resultsDataGridView.MultiSelect = false;
+            resultsDataGridView.Name = "resultsDataGridView";
+            resultsDataGridView.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            resultsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            resultsDataGridView.RowHeadersVisible = false;
+            resultsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            resources.ApplyResources(dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.DataPropertyName = "Surname";
+            resources.ApplyResources(dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            resources.ApplyResources(dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.DataPropertyName = "Country";
+            resources.ApplyResources(dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.DataPropertyName = "Region";
+            resources.ApplyResources(dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.DataPropertyName = "District";
+            resources.ApplyResources(dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.DataPropertyName = "Settlement";
+            resources.ApplyResources(dataGridViewTextBoxColumn7, "dataGridViewTextBoxColumn7");
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewTextBoxColumn8.DataPropertyName = "Postcode";
+            resources.ApplyResources(dataGridViewTextBoxColumn8, "dataGridViewTextBoxColumn8");
+            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // personBindingSource
+            // 
+            personBindingSource.DataSource = typeof(Models.Person);
+            // 
             // Form1
             // 
             AcceptButton = searchButton;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(resultsDataGridView);
             Controls.Add(editButton);
             Controls.Add(deleteButton);
             Controls.Add(addButton);
-            Controls.Add(searchResultsListBox);
             Controls.Add(groupBox1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -275,9 +371,10 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)idNumericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)personBindingSource).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)resultsDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)personBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -298,7 +395,6 @@
         private Label label6;
         private NumericUpDown idNumericUpDown;
         private Button searchButton;
-        private ListBox searchResultsListBox;
         private Button addButton;
         private Button deleteButton;
         private Button editButton;
@@ -306,7 +402,6 @@
         private TextBox surnameTextBox;
         private Label label8;
         private TextBox nameTextBox;
-        private BindingSource personBindingSource;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
@@ -314,5 +409,23 @@
         private ToolStripMenuItem додатиToolStripMenuItem;
         private ToolStripMenuItem видалитиToolStripMenuItem;
         private ToolStripMenuItem редагуватиToolStripMenuItem;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn regionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn districtDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn settlementDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn postcodeDataGridViewTextBoxColumn;
+        private DataGridView resultsDataGridView;
+        private BindingSource personBindingSource;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }

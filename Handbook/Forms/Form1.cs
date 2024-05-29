@@ -28,7 +28,7 @@ namespace Handbook
                 id = (int)idNumericUpDown.Value;
             }
             personBindingSource.DataSource = handbook.Search(id, nameTextBox.Text,
-                surnameTextBox.Text, countryTextBox.Text, regionTextBox.Text,
+            surnameTextBox.Text, countryTextBox.Text, regionTextBox.Text,
                 districtTextBox.Text, settlementTextBox.Text, postcodeTextBox.Text);
         }
 
@@ -69,12 +69,12 @@ namespace Handbook
 
         private Person? GetSelectedPerson()
         {
-            if (searchResultsListBox.SelectedItems.Count == 0)
+            if (resultsDataGridView.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Людина не обрана", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
-            return searchResultsListBox.SelectedItems[0] as Person;
+            return resultsDataGridView.CurrentRow.DataBoundItem as Person;
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -97,5 +97,7 @@ namespace Handbook
         {
             MessageBox.Show("Розробник програми: Бєлік Єгор. \nПрограма призначена для пошуку розташування людей, яких Ви додали до списку.", "Інформація", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+
     }
 }
