@@ -54,6 +54,10 @@
             deleteButton = new Button();
             editButton = new Button();
             menuStrip1 = new MenuStrip();
+            операціїToolStripMenuItem = new ToolStripMenuItem();
+            додатиToolStripMenuItem = new ToolStripMenuItem();
+            видалитиToolStripMenuItem = new ToolStripMenuItem();
+            редагуватиToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
@@ -214,9 +218,33 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { helpToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { операціїToolStripMenuItem, helpToolStripMenuItem });
             resources.ApplyResources(menuStrip1, "menuStrip1");
             menuStrip1.Name = "menuStrip1";
+            // 
+            // операціїToolStripMenuItem
+            // 
+            операціїToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { додатиToolStripMenuItem, видалитиToolStripMenuItem, редагуватиToolStripMenuItem });
+            операціїToolStripMenuItem.Name = "операціїToolStripMenuItem";
+            resources.ApplyResources(операціїToolStripMenuItem, "операціїToolStripMenuItem");
+            // 
+            // додатиToolStripMenuItem
+            // 
+            додатиToolStripMenuItem.Name = "додатиToolStripMenuItem";
+            resources.ApplyResources(додатиToolStripMenuItem, "додатиToolStripMenuItem");
+            додатиToolStripMenuItem.Click += addButton_Click;
+            // 
+            // видалитиToolStripMenuItem
+            // 
+            видалитиToolStripMenuItem.Name = "видалитиToolStripMenuItem";
+            resources.ApplyResources(видалитиToolStripMenuItem, "видалитиToolStripMenuItem");
+            видалитиToolStripMenuItem.Click += deleteButton_Click;
+            // 
+            // редагуватиToolStripMenuItem
+            // 
+            редагуватиToolStripMenuItem.Name = "редагуватиToolStripMenuItem";
+            resources.ApplyResources(редагуватиToolStripMenuItem, "редагуватиToolStripMenuItem");
+            редагуватиToolStripMenuItem.Click += editButton_Click;
             // 
             // helpToolStripMenuItem
             // 
@@ -282,5 +310,9 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
+        private ToolStripMenuItem операціїToolStripMenuItem;
+        private ToolStripMenuItem додатиToolStripMenuItem;
+        private ToolStripMenuItem видалитиToolStripMenuItem;
+        private ToolStripMenuItem редагуватиToolStripMenuItem;
     }
 }
