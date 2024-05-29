@@ -525,28 +525,28 @@
   <data name="&gt;&gt;countryTextBox.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="settmentTextBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="settlementTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>123, 286</value>
   </data>
-  <data name="settmentTextBox.MaxLength" type="System.Int32, mscorlib">
+  <data name="settlementTextBox.MaxLength" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="settmentTextBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="settlementTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 23</value>
   </data>
-  <data name="settmentTextBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="settlementTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;settmentTextBox.Name" xml:space="preserve">
-    <value>settmentTextBox</value>
+  <data name="&gt;&gt;settlementTextBox.Name" xml:space="preserve">
+    <value>settlementTextBox</value>
   </data>
-  <data name="&gt;&gt;settmentTextBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;settlementTextBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;settmentTextBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;settlementTextBox.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;settmentTextBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;settlementTextBox.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
   <data name="regionTextBox.Location" type="System.Drawing.Point, System.Drawing">
@@ -594,12 +594,12 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="personBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="searchResultsListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
+  <metadata name="personBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="searchResultsListBox.ItemHeight" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
@@ -624,9 +624,6 @@
   <data name="&gt;&gt;searchResultsListBox.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="personBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="addButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>

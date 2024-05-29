@@ -46,7 +46,7 @@
             label3 = new Label();
             districtTextBox = new TextBox();
             countryTextBox = new TextBox();
-            settmentTextBox = new TextBox();
+            settlementTextBox = new TextBox();
             regionTextBox = new TextBox();
             searchResultsListBox = new ListBox();
             personBindingSource = new BindingSource(components);
@@ -77,7 +77,7 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(districtTextBox);
             groupBox1.Controls.Add(countryTextBox);
-            groupBox1.Controls.Add(settmentTextBox);
+            groupBox1.Controls.Add(settlementTextBox);
             groupBox1.Controls.Add(regionTextBox);
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
@@ -96,11 +96,13 @@
             // 
             resources.ApplyResources(nameTextBox, "nameTextBox");
             nameTextBox.Name = "nameTextBox";
+            nameTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // surnameTextBox
             // 
             resources.ApplyResources(surnameTextBox, "surnameTextBox");
             surnameTextBox.Name = "surnameTextBox";
+            surnameTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // label6
             // 
@@ -118,6 +120,7 @@
             resources.ApplyResources(searchButton, "searchButton");
             searchButton.Name = "searchButton";
             searchButton.UseVisualStyleBackColor = true;
+            searchButton.Click += searchButton_Click;
             // 
             // label5
             // 
@@ -128,6 +131,7 @@
             // 
             resources.ApplyResources(postcodeTextBox, "postcodeTextBox");
             postcodeTextBox.Name = "postcodeTextBox";
+            postcodeTextBox.KeyPress += OnlyDigit_KeyPress;
             // 
             // label2
             // 
@@ -153,21 +157,25 @@
             // 
             resources.ApplyResources(districtTextBox, "districtTextBox");
             districtTextBox.Name = "districtTextBox";
+            districtTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // countryTextBox
             // 
             resources.ApplyResources(countryTextBox, "countryTextBox");
             countryTextBox.Name = "countryTextBox";
+            countryTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
-            // settmentTextBox
+            // settlementTextBox
             // 
-            resources.ApplyResources(settmentTextBox, "settmentTextBox");
-            settmentTextBox.Name = "settmentTextBox";
+            resources.ApplyResources(settlementTextBox, "settlementTextBox");
+            settlementTextBox.Name = "settlementTextBox";
+            settlementTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // regionTextBox
             // 
             resources.ApplyResources(regionTextBox, "regionTextBox");
             regionTextBox.Name = "regionTextBox";
+            regionTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // searchResultsListBox
             // 
@@ -187,6 +195,7 @@
             resources.ApplyResources(addButton, "addButton");
             addButton.Name = "addButton";
             addButton.UseVisualStyleBackColor = true;
+            addButton.Click += addButton_Click;
             // 
             // deleteButton
             // 
@@ -217,6 +226,7 @@
             Controls.Add(searchResultsListBox);
             Controls.Add(groupBox1);
             Name = "Form1";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)idNumericUpDown).EndInit();
@@ -230,7 +240,7 @@
         private Label label1;
         private TextBox districtTextBox;
         private TextBox countryTextBox;
-        private TextBox settmentTextBox;
+        private TextBox settlementTextBox;
         private TextBox regionTextBox;
         private Label label2;
         private Label label3;

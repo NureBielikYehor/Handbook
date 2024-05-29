@@ -30,6 +30,5 @@ namespace Handbook
             Settlement = settlement;
             Postcode = postcode;
         }
-
     }
 }
