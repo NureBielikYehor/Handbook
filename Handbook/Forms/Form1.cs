@@ -84,7 +84,7 @@ namespace Handbook
             {
                 return;
             }
-            DialogResult result = MessageBox.Show($"Ви впенені, що хочете видалити {person.FullName}?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show($"Ви впенені, що хочете видалити {person.Name} {person.Surname}?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 handbook.People.Remove(person);

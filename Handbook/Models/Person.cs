@@ -18,8 +18,6 @@ namespace Handbook.Models
         public string District { get; set; }
         public string Settlement { get; set; }
         public string Postcode { get; set; }
-        [JsonIgnore]
-        public string FullName => Surname + " " + Name;
 
         public Person(int id, string name, string surname, string country, string region, string district, string settlement, string postcode)
         {
