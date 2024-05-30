@@ -27,9 +27,15 @@ namespace Handbook
             {
                 id = (int)idNumericUpDown.Value;
             }
-            personBindingSource.DataSource = handbook.Search(id, nameTextBox.Text,
+            List<Person> results = handbook.Search(id, nameTextBox.Text,
             surnameTextBox.Text, countryTextBox.Text, regionTextBox.Text,
                 districtTextBox.Text, settlementTextBox.Text, postcodeTextBox.Text);
+
+            personBindingSource.DataSource = results;
+            if (results.Count == 0 && sender != null)
+            {
+                MessageBox.Show("Жодної людини не знайдено", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void addButton_Click(object sender, EventArgs e)
