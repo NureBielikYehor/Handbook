@@ -1,6 +1,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Handbook.Models;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace Handbook
 {
@@ -32,6 +33,7 @@ namespace Handbook
                 districtTextBox.Text, settlementTextBox.Text, postcodeTextBox.Text);
 
             personBindingSource.DataSource = results;
+            editButton.Enabled = deleteButton.Enabled = editToolStripMenuItem.Enabled = deleteToolStripMenuItem.Enabled = results.Count != 0;
             if (results.Count == 0 && sender != null)
             {
                 MessageBox.Show("Жодної людини не знайдено", "Повідомлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -48,14 +50,6 @@ namespace Handbook
         private void OnlyLetter_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Delete)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void OnlyDigit_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Delete)
             {
                 e.Handled = true;
             }
@@ -104,6 +98,9 @@ namespace Handbook
             MessageBox.Show("Розробник програми: Бєлік Єгор. \nПрограма призначена для пошуку розташування людей, яких Ви додали до списку.", "Інформація", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

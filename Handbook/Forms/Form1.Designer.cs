@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             label8 = new Label();
             label7 = new Label();
@@ -54,10 +54,12 @@
             deleteButton = new Button();
             editButton = new Button();
             menuStrip1 = new MenuStrip();
+            файлToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
             операціїToolStripMenuItem = new ToolStripMenuItem();
             додатиToolStripMenuItem = new ToolStripMenuItem();
-            видалитиToolStripMenuItem = new ToolStripMenuItem();
-            редагуватиToolStripMenuItem = new ToolStripMenuItem();
+            deleteToolStripMenuItem = new ToolStripMenuItem();
+            editToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
             resultsDataGridView = new DataGridView();
@@ -151,7 +153,6 @@
             // 
             resources.ApplyResources(postcodeTextBox, "postcodeTextBox");
             postcodeTextBox.Name = "postcodeTextBox";
-            postcodeTextBox.KeyPress += OnlyDigit_KeyPress;
             // 
             // label2
             // 
@@ -220,13 +221,25 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { операціїToolStripMenuItem, helpToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, операціїToolStripMenuItem, helpToolStripMenuItem });
             resources.ApplyResources(menuStrip1, "menuStrip1");
             menuStrip1.Name = "menuStrip1";
             // 
+            // файлToolStripMenuItem
+            // 
+            файлToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { exitToolStripMenuItem });
+            файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            resources.ApplyResources(файлToolStripMenuItem, "файлToolStripMenuItem");
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(exitToolStripMenuItem, "exitToolStripMenuItem");
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
             // операціїToolStripMenuItem
             // 
-            операціїToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { додатиToolStripMenuItem, видалитиToolStripMenuItem, редагуватиToolStripMenuItem });
+            операціїToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { додатиToolStripMenuItem, deleteToolStripMenuItem, editToolStripMenuItem });
             операціїToolStripMenuItem.Name = "операціїToolStripMenuItem";
             resources.ApplyResources(операціїToolStripMenuItem, "операціїToolStripMenuItem");
             // 
@@ -236,17 +249,17 @@
             resources.ApplyResources(додатиToolStripMenuItem, "додатиToolStripMenuItem");
             додатиToolStripMenuItem.Click += addButton_Click;
             // 
-            // видалитиToolStripMenuItem
+            // deleteToolStripMenuItem
             // 
-            видалитиToolStripMenuItem.Name = "видалитиToolStripMenuItem";
-            resources.ApplyResources(видалитиToolStripMenuItem, "видалитиToolStripMenuItem");
-            видалитиToolStripMenuItem.Click += deleteButton_Click;
+            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            resources.ApplyResources(deleteToolStripMenuItem, "deleteToolStripMenuItem");
+            deleteToolStripMenuItem.Click += deleteButton_Click;
             // 
-            // редагуватиToolStripMenuItem
+            // editToolStripMenuItem
             // 
-            редагуватиToolStripMenuItem.Name = "редагуватиToolStripMenuItem";
-            resources.ApplyResources(редагуватиToolStripMenuItem, "редагуватиToolStripMenuItem");
-            редагуватиToolStripMenuItem.Click += editButton_Click;
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            resources.ApplyResources(editToolStripMenuItem, "editToolStripMenuItem");
+            editToolStripMenuItem.Click += editButton_Click;
             // 
             // helpToolStripMenuItem
             // 
@@ -272,25 +285,25 @@
             resultsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resultsDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8 });
             resultsDataGridView.DataSource = personBindingSource;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            resultsDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            resultsDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             resultsDataGridView.MultiSelect = false;
             resultsDataGridView.Name = "resultsDataGridView";
             resultsDataGridView.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            resultsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            resultsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             resultsDataGridView.RowHeadersVisible = false;
             resultsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             // 
@@ -407,8 +420,8 @@
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem операціїToolStripMenuItem;
         private ToolStripMenuItem додатиToolStripMenuItem;
-        private ToolStripMenuItem видалитиToolStripMenuItem;
-        private ToolStripMenuItem редагуватиToolStripMenuItem;
+        private ToolStripMenuItem deleteToolStripMenuItem;
+        private ToolStripMenuItem editToolStripMenuItem;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
@@ -427,5 +440,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private ToolStripMenuItem файлToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
     }
 }

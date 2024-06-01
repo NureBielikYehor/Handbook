@@ -98,6 +98,7 @@
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(250, 23);
             nameTextBox.TabIndex = 0;
+            nameTextBox.TextChanged += textBox_TextChanged;
             nameTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // surnameTextBox
@@ -107,10 +108,12 @@
             surnameTextBox.Name = "surnameTextBox";
             surnameTextBox.Size = new Size(250, 23);
             surnameTextBox.TabIndex = 1;
+            surnameTextBox.TextChanged += textBox_TextChanged;
             surnameTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // okButton
             // 
+            okButton.Enabled = false;
             okButton.ImeMode = ImeMode.NoControl;
             okButton.Location = new Point(299, 321);
             okButton.Name = "okButton";
@@ -133,11 +136,11 @@
             // postcodeTextBox
             // 
             postcodeTextBox.Location = new Point(124, 283);
-            postcodeTextBox.MaxLength = 5;
+            postcodeTextBox.MaxLength = 15;
             postcodeTextBox.Name = "postcodeTextBox";
             postcodeTextBox.Size = new Size(250, 23);
             postcodeTextBox.TabIndex = 7;
-            postcodeTextBox.KeyPress += OnlyDigit_KeyPress;
+            postcodeTextBox.TextChanged += textBox_TextChanged;
             // 
             // label2
             // 
@@ -186,6 +189,7 @@
             districtTextBox.Name = "districtTextBox";
             districtTextBox.Size = new Size(250, 23);
             districtTextBox.TabIndex = 5;
+            districtTextBox.TextChanged += textBox_TextChanged;
             districtTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // countryTextBox
@@ -195,6 +199,7 @@
             countryTextBox.Name = "countryTextBox";
             countryTextBox.Size = new Size(250, 23);
             countryTextBox.TabIndex = 3;
+            countryTextBox.TextChanged += textBox_TextChanged;
             countryTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // settlementTextBox
@@ -204,6 +209,7 @@
             settlementTextBox.Name = "settlementTextBox";
             settlementTextBox.Size = new Size(250, 23);
             settlementTextBox.TabIndex = 6;
+            settlementTextBox.TextChanged += textBox_TextChanged;
             settlementTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // regionTextBox
@@ -213,6 +219,7 @@
             regionTextBox.Name = "regionTextBox";
             regionTextBox.Size = new Size(250, 23);
             regionTextBox.TabIndex = 4;
+            regionTextBox.TextChanged += textBox_TextChanged;
             regionTextBox.KeyPress += OnlyLetter_KeyPress;
             // 
             // PersonAddEditForm
