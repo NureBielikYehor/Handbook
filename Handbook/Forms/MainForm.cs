@@ -47,14 +47,6 @@ namespace Handbook
             searchButton_Click(null, null);
         }
 
-        private void OnlyLetter_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Delete)
-            {
-                e.Handled = true;
-            }
-        }
-
         private void editButton_Click(object sender, EventArgs e)
         {
             Person? person = GetSelectedPerson();
@@ -104,6 +96,14 @@ namespace Handbook
             if (result == DialogResult.Yes)
             {
                 Close();
+            }
+        }
+
+        private void OnlyLetter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Delete)
+            {
+                e.Handled = true;
             }
         }
     }
